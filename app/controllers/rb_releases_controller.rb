@@ -18,6 +18,10 @@ class RbReleasesController < RbApplicationController
     end
   end
 
+  def create
+    new
+  end
+
   def new
     @release = RbRelease.new(:project => @project)
     @backlog_points = remaining_story_points
@@ -38,6 +42,10 @@ class RbReleasesController < RbApplicationController
     else
       @backlog_points = remaining_story_points
     end
+  end
+
+  def update
+    edit
   end
 
   def destroy
